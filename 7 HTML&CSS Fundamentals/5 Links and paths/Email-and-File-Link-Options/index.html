@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <a href="http://www.website.com" target="\_blank">Link</a>
+  <a href="http://www.website.com" target="_blank">Link</a>
+
+	<div class="wrapper">
+		<h1>Contact Links</h1>
+		Whenever you use an email or phone number within your web page, consider using these options to improve your user's experience.
+		<hr>
+
+
+
+	  <h2>Basic Email Link</h2>
+		<p>This link will automatically open the user's default email program with the TO field already filled out with the proper email address.</p>
+		<div class="code-block"><code>&lt;a href="mailto:hello@yoursite.com"&gt;Email Me&lt;/a&gt;</code></div>
+    <!-- BASIC EMAIL LINK HERE -->
+    <p><a href="mailto:hello@yoursite.com">Email Me: </a></p>
+    <hr>
+
+
+
+
+    <h2>Basic Email Link with Subject</h2>
+    <p>Auto populate the Subject field in the email program. Spaces in the subject will typically work, but to be sure, you can replace spaces with "%20".</p>
+    <div class="code-block"><code>&lt;a href="mailto:hello@yoursite.com?subject=Email%20Subject%20Here"&gt;Email Me&lt;/a&gt;</code></div>
+    <!-- BASIC EMAIL WITH SUBJECT -->
+    <p><a href="mailto:hello@yoursite.com?subject=Email%20Subject%20Here">Email Me</a></p>
+    <hr>
+
+
+
+
+
+    <h2>Adding CC and BCC</h2>
+    <p>Adding CC (Carbon Copy) and BCC (Blind Carbon Copy) can also be added as parameters.</p>
+    <div class="code-block"><code>&lt;a href="mailto:hello@yoursite.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=onelastperson@theirsite.com<br>&subject=Big%20News"&gt;Email Me&lt;/a&gt;</code></div>
+    <!-- BASIC EMAIL WITH SUBJECT -->
+    <p><a href="mailto:hello@yoursite.com?cc=someoneelse@theirsite.com, another@thatsite.com, me@mysite.com&bcc=onelastperson@theirsite.com&subject=Big%20News">Email Me</a></p>
+    <hr>
+
+
+
+
+
+
+    <h2>Adding Body Text</h2>
+    <p>Providing pre-written Body Text to your email can be useful in certain situations. ("You are hired!") 😂</p>
+    <div class="code-block"><code>&lt;a href="mailto:hello@yoursite.com?cc=someoneelse@theirsite.com,
+    another@thatsite.com,
+    me@mysite.com
+    <br>&bcc=onelastperson@theirsite.com
+    &subject=Big%20News
+    &body=We%20want%20to%20hire%20you!"&gt;Email Me&lt;/a&gt;</code></div>
+    <!-- BASIC EMAIL WITH SUBJECT -->
+    <p><a href="mailto:hello@yoursite.com?cc=someoneelse@theirsite.com,another@thatsite.com, me@mysite.com&bcc=onelastperson@theirsite.com&subject=Big%20News&body=We%20want%20to%20hire%20you!">Email Me</a></p>
+    <hr>
+
+
+
+    <h2>Styling Email Links</h2>
+    <p>If you wish to style the email links differently than the rest of your page links, a unique pseudo class is available to target links that start with "mailto:".</p>
+    <div class="code-block"><code><pre>//  CSS STYLES 
+ //  Normal Link 
+  a &#123;
+    font-family: arial;
+    text-decoration: none;
+    color: blue;
+  }
+
+ //  Email Link 
+  a&#91;href^="mailto:"]{
+      color: red;
+  }</pre></code></div>
+    <!-- BASIC EMAIL WITH STYLE -->
+    <p><a href="mailto:hello@yoursite.com">Email Me</a></p>
+    <hr>
+
+
+
+
+
+    <h2>Telephone Links</h2>
+    <p>To force the telephone link to make the call to the number when clicked, which is great for mobile devices, use this code.</p>
+    <div class="code-block"><code><pre>
+// HTML CODE 
+  &lt;p>&lt;a href="tel:555-555-5555"><br>555-555-5555&lt;/a>&lt;/p>
+
+// CSS CODE  
+  a[href^="tel:"]{
+    color: pink;
+  }
+    </pre></code></div>
+    <!-- BASIC TELEPHONE LINK WITH STYLE -->
+    <p><a href="tel:555-555-5555">555-555-5555</a></p>
+    <p><b><i>Note:</i></b> The iPhone Safari browser will automatically detect a phone number on a page and will convert the text into a call link without needing this code, but it is a good practice as this will work on: iPhone, Droid / Android, & Blackberry.</p> 
+    <hr>
+
+
+
+
+
+    <h2>Open File Links</h2>
+    <p>Certain web files will open within the browser window when you link to them. These include web files (.html & .css) and images (jpg, .gif, and .png).</p>
+    <div class="code-block"><code><pre>
+    &lt;p>&lt;a href="another-page.html">Open another 
+    HTML page in Browser&lt;/a>&lt;/p>
+    &lt;p>&lt;a href="images/chess.jpg">Open Image in
+    Browser&lt;/a>&lt;/p>
+    &lt;p>&lt;a href="style.css">Open CSS in
+    Browser&lt;/a>&lt;/p>
+    </pre></code></div>
+    <!-- Open File Links -->
+    <p><a href="another-page.html">Open another HTML page in Browser</a></p>
+    <p><a href="images/chess.jpg">Open Image in Browser</a></p>
+    <p><a href="style.css">Open CSS in Browser</a></p>
+    <p><b><i>Note:</i></b> When linking to HTML pages, they will display as you would normally expect. Images (jpg, gif, & png) are displayed at full height and width of the original image. CSS files will simply display the code as it is written and is not usually linked like this.</p>
+    <hr>
+
+
+
+
+  <h2>Download File Links</h2>
+  <p>When non-web files (.zip, pdf, .doc) are linked, those will be downloaded to the user’s computer. If you want the link to download web files, then the attribute download can be added to the link to specify that the file should be downloaded.<p>
+  <p>Since all files need to follow specific filename rules which can appear messy with the hyphens, etc, the downloaded file can be auto-renamed to use a more friendly filename upon download.</p>
+<div class="code-block"><code><pre>
+&lt;p>Download with Original Filename: 
+&lt;a href="pdf-files/pdf-sample-243.pdf"<br> download>Download: Sample PDF File&lt;/a>&lt;/p>
+
+&lt;p>Download with New Filename:
+&lt;a href="pdf-files/pdf-sample-243.pdf"<br>download="SamplePDF File.pdf"><br>Download: Sample PDF File&lt;/a>&lt;/p>
+</pre></code></div>
+
+  <!-- DOWNLOAD FILE LINKS -->
+	<p>Download with Original Filename: 
+	<a href="pdf-files/pdf-sample-243.pdf" download>Download: Sample PDF File</a></p>
+	<p>Download with New Filename:
+	<a href="pdf-files/pdf-sample-243.pdf" download="Sample PDF File.pdf">Download: Sample PDF File</a></p>
+  <p><b><i>Download Link Limitations:</i></b><br>
+Downloads will only work on files delivered from a web server—the download will not work when tested locally.</p>
+<p>Both Chrome and Firefox will disable the download function if the link points to a file on a different domain from the current one. The file will still open properly, but the download feature (and renaming) is disabled.</p>
+  <hr>
+
+
+
+
+</div>
+    <script src="script.js"></script>
+  </body>
+</html>
